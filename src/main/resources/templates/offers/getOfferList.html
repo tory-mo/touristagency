@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All offers</title>
+</head>
+<body>
+
+<div th:each="offer : ${offers}">
+    <a th:text="${offer.getCountry()}
+                ${offer.getCity()}
+                ${offer.getDayPrice()}
+                ${offer.getIsHot()}">offer</a>
+</div>
+
+</body>
+</html>
