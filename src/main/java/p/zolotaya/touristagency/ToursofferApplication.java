@@ -13,8 +13,8 @@ public class ToursofferApplication {
 		SpringApplication.run(ToursofferApplication.class, args);
 	}
 
-	@RequestMapping(value = "/")
+	/*@RequestMapping(value = "/")
 	public String index() {
 		return "index";
-	}
+	}*/
 }

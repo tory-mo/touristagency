@@ -1,20 +1,18 @@
 package p.zolotaya.touristagency.data.service.impl;
 
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import p.zolotaya.touristagency.data.dao.DAOException;
 import p.zolotaya.touristagency.data.dao.OfferDAO;
 import p.zolotaya.touristagency.data.entity.Offer;
 import p.zolotaya.touristagency.data.service.OfferService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/offers")
+@RequestMapping("/api/offers")
 public class OffersServiceImpl implements OfferService {
 
     @Autowired
@@ -54,7 +52,8 @@ public class OffersServiceImpl implements OfferService {
     }
 
     @Override
-    public boolean addOffer(Offer offer) throws DAOException {
+    @PostMapping("/offer")
+    public boolean addOffer(@RequestBody Offer offer) throws DAOException {
         return offerDao.createOffer(offer);
     }
 

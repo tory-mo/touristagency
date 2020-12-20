@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.ArrayList;
 
 @RestController
-@RequestMapping("/tourists")
+@RequestMapping("/api/tourists")
 public class TouristServiceImpl implements TouristService {
 
     @Autowired
